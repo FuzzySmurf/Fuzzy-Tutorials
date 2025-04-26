@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UIDocuments/DialogBox.uss?fileID=7433441132597879392&amp;guid=0328e06cc196301498daf48fd88f096d&amp;type=3#DialogBox" />
+    <ui:VisualElement name="Container" style="flex-grow: 1; display: flex;">
+        <ui:VisualElement name="MainContent" class="main-content" />
+        <ui:VisualElement name="DialogBox" class="dialog-box">
+            <ui:VisualElement name="DialogContent" class="dialog-content">
+                <ui:Label text="Hello! I hope you&apos;re having a great day! Hello! I hope you&apos;re having a great day! Hello! I hope you&apos;re having a great day! " name="dialog-text" style="justify-content: center; font-size: 14px; white-space: normal; width: 375px; -unity-font: url(&quot;project://database/Assets/ArtAssets/Fonts/SpecialGothicCondensedOne-Regular.ttf?fileID=12800000&amp;guid=1626f952c21365e4381a52abdb980519&amp;type=3#SpecialGothicCondensedOne-Regular&quot;); color: rgb(255, 255, 255); -unity-font-definition: initial;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
