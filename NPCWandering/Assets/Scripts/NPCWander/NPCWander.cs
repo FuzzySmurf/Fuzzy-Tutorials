@@ -9,6 +9,10 @@ namespace TutorialWander
     public class NPCWander : EnemyAction
     {
         public SharedVariable<float> radius = 5.0f;
+        [Tooltip("have we reached the destination?")]
+        public SharedVariable<bool> hasReachedDestination;
+        [Tooltip("Can we get a new destination?")]
+        public SharedVariable<bool> canGetNewDestination;
         protected Vector3 _startingPoint;
 
         public Vector3 destination;
@@ -29,7 +33,25 @@ namespace TutorialWander
             //Determine Destination for Unit.
             DetermineDestinationPoint();
 
+            //Check if we are within range, and mark True.
+            CheckWithinRange();
+
             return base.OnUpdate();
+        }
+
+        private void CheckWithinRange()
+        {
+            //if we already reached the destination, no need to continue.
+            if (hasReachedDestination.Value) return;
+            //if we already have a destination, no need to check.
+            if (canGetNewDestination.Value) return;
+            
+            //do a distance check between US and the destination.
+            float dist = Vector3.Distance(transform.position, destination);
+            if (dist < 0.5f)
+            {
+                hasReachedDestination.Value = true;
+            }
         }
 
         protected override void OnDrawGizmos() {
@@ -49,13 +71,16 @@ namespace TutorialWander
         private void DetermineDestinationPoint()
         {
             //if not assigned.
-            if (destination == Vector3.zero)
+            if (destination == Vector3.zero || canGetNewDestination.Value)
             {
                 //find next destination.
                 destination = GetRandomPointInSphere();
 
                 //set assignment to NPC.
                 _agent.SetDestination(destination);
+
+                //we got destination, set back to false.
+                canGetNewDestination.Value = false;
             }
         }
 

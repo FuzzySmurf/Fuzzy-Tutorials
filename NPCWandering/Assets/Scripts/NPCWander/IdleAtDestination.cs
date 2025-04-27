@@ -27,6 +27,7 @@ namespace TutorialWander
 
         public override TaskStatus OnUpdate()
         {
+            if(hasReachedDestination == null || !hasReachedDestination.Value) return TaskStatus.Failure;
             //we have reached the destination. set true.
             hasReachedDestination.Value = true;
 
