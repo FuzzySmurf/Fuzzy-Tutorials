@@ -4,7 +4,7 @@ using Opsive.BehaviorDesigner.Runtime.Tasks.Actions;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace TutorialWander
+namespace BPWandering
 {
     public class EnemyAction : Action
     {
