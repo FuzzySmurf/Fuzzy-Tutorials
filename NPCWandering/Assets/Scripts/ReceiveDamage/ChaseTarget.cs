@@ -4,7 +4,6 @@ using BPWandering;
 using Opsive.BehaviorDesigner.Runtime.Tasks;
 using Opsive.BehaviorDesigner.Runtime.Tasks.Actions;
 using Opsive.GraphDesigner.Runtime.Variables;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace BPChaseNPC

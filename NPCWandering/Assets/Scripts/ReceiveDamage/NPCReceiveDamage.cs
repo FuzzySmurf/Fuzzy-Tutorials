@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Opsive.BehaviorDesigner.Runtime;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using Opsive.Shared.Events;
 
 namespace BPChaseNPC
