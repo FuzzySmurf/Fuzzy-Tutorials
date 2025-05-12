@@ -52,6 +52,9 @@ namespace BPChaseNPC
 
         private void DrawAreaWandering()
         {
+            //prevent an editor error.
+            if (_parentRef == null) return;
+
             using (new UnityEditor.Handles.DrawingScope(Matrix4x4.TRS(_parentRef.transform.position, Quaternion.identity, Vector3.one)))
             {
                 UnityEditor.Handles.color = Color.red;
