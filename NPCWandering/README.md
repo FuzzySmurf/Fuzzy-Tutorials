@@ -1,15 +1,18 @@
-# Getting Started
+
 [//]: <primary Color: #B59111>
 [//]: <secondary Color: #A469A4>
-[//]: <tertiary Color: #34CF14>
+[//]: <tertiary Color: #518ccf>
 
 # Table of Contents(TOC)
-1. [Pre-Requisite](#Pre-Requisite) - please read.
-2. [Steps](#Steps) - running project first time.
-3. [BDPro UpgradeGuide](#Behavior-Designer-Pro-Upgrade-Guide)
-4. [Tutorials](#Tutorials) - YT Links and further details.
+1. [Getting Started](#Getting-Started)
+- 1-1. [Pre-Requisite](#Pre-Requisite) - please read.
+- 1-2. [Steps](#Steps) - running project first time.
+- 1-3. [BDPro UpgradeGuide](#Behavior-Designer-Pro-Upgrade-Guide)
+2. [Tutorials](#Tutorials) - YT Links and further details.
+3. [FAQ](#FAQ)
 
 
+# Getting Started
 ## <span style="color:#B59111"> Pre-Requisite </span>
 * These packages assume you will use Behavior Designer Pro, and are designed with it in mind. You can still use the UIToolkit packages, by deleting the Scenes/ and Scripts/ with the 'BP-' Prefix.
 * These projects were made in Unity 6.0, However I know they work from 2022 and onward at least.
@@ -52,3 +55,11 @@ These Tutorials aren't made in any particular order, They are made as a simple w
 
 ### <span style="color:#A469A4"> BPReceiveDamage </span>
 * How will the NPC recognize me?
+
+
+# FAQ:
+### <span style="color:#A469A4">I have missing prefabs in my scene, how do I fix this? </span>
+* * These are prefab variants from the Unity Asset Store Character Controller. Once you install the *Starter Assets Character Controller* (_link included above_), it should auto resolve when you reload the scene.
+
+### <span style="color:#A469A4">I am getting a handful of script errors when I open the scene. </span>
+* * Many of the scripts reference the Included Packages. Install the [IncludedPackages](#Included-Packages) from the package manager and they should self-resolve.
