@@ -3,10 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using Opsive.BehaviorDesigner.Runtime.Tasks;
 using Opsive.GraphDesigner.Runtime.Variables;
-using TutorialWander;
 using UnityEngine;
 
-namespace TutorialWander
+namespace BPWandering
 {
     public class IdleAtDestination : EnemyAction
     {

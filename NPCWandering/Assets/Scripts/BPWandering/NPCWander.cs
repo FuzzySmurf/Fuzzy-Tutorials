@@ -4,7 +4,7 @@ using Opsive.BehaviorDesigner.Runtime.Tasks;
 using Opsive.GraphDesigner.Runtime.Variables;
 using UnityEngine;
 
-namespace TutorialWander
+namespace BPWandering
 {
     public class NPCWander : EnemyAction
     {
