@@ -6,7 +6,7 @@ using Opsive.BehaviorDesigner.Runtime.Tasks.Actions;
 using Opsive.GraphDesigner.Runtime.Variables;
 using UnityEngine;
 
-namespace BPChaseNPC
+namespace BPNPCChase
 {
     public class ChaseTarget : EnemyAction
     {
