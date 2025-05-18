@@ -12,14 +12,16 @@ namespace BPNPCChase
     {
         [Tooltip("The targetObject we are chasing.")]
         public SharedVariable<GameObject> targetObject;
+        //how far should we be from the player before stopping?
         public float stoppingDistance;
+        //reference to OUR parent.
+        private GameObject _parentRef;
+
         [Tooltip("How far should we be before the leash breaks?")]
         public SharedVariable<float> leashDistance = 12;
 
         [Tooltip("Should we reset the Wander Values?")]
         public SharedVariable<bool> resetWander = false;
-
-        private GameObject _parentRef;
 
         public override void OnAwake()
         {
@@ -30,7 +32,7 @@ namespace BPNPCChase
         {
             base.OnStart();
         }
-        
+
         public override TaskStatus OnUpdate()
         {
             if (targetObject.Value == null) return TaskStatus.Failure;
@@ -39,13 +41,14 @@ namespace BPNPCChase
             ChaseTargetObject();
 
             //Check if we are still in Leash Range.
-            if(IsWithinLeashDistance()) return TaskStatus.Success;
+            if (IsWithinLeashDistance()) return TaskStatus.Success;
 
             ResetVariables();
             return TaskStatus.Failure;
         }
 
-        protected override void OnDrawGizmos() {
+        protected override void OnDrawGizmos()
+        {
             base.OnDrawGizmos();
             DrawAreaWandering();
         }
@@ -62,23 +65,27 @@ namespace BPNPCChase
             }
         }
 
-        private bool IsWithinLeashDistance() {
+        private bool IsWithinLeashDistance()
+        {
             float dist = Vector3.Distance(_parentRef.transform.position, targetObject.Value.transform.position);
             if (dist < leashDistance.Value) return true;
 
             return false;
         }
 
-        private void ResetVariables() {
+        private void ResetVariables()
+        {
             targetObject.Value = null;
             resetWander.Value = true;
         }
 
-        private void ChaseTargetObject() {
+        private void ChaseTargetObject()
+        {
             _agent.SetDestination(DetermineStoppingDestination(targetObject.Value, stoppingDistance));
         }
 
-        protected Vector3 DetermineStoppingDestination(GameObject targetCharacter, float stopDistance) {
+        protected Vector3 DetermineStoppingDestination(GameObject targetCharacter, float stopDistance)
+        {
             //find the distance between enemy and player. (player pos = this.pos);
             Vector3 parentPosition = _parentRef.transform.position;
             Vector3 difference = targetCharacter.transform.position - parentPosition;
@@ -86,15 +93,10 @@ namespace BPNPCChase
             Vector3 direction = difference.normalized;
             float currentDistance = difference.magnitude;
 
-            //are we still Far enough from the target??
-            if (currentDistance > stopDistance)
-            {
-                float moveDistance = currentDistance - stopDistance;
-                Vector3 targetPosition = parentPosition + direction * moveDistance;
-                return targetPosition;
-            }
-            //if we're still far, just return 'our' position.
-            return parentPosition;
+            //determine the actual Vector3 position we're going for.
+            float moveDistance = currentDistance - stopDistance;
+            Vector3 targetPosition = parentPosition + direction * moveDistance;
+            return targetPosition;
         }
     }
 }
