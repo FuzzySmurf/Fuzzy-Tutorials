@@ -44,17 +44,21 @@ These Tutorials aren't made in any particular order, They are made as a simple w
 
 ### <span style="color:#A469A4"> UI Dialog </span>
 * A quick and simple tutorial on setting up a Dialog Box with UI Toolkit.
-* Unity Dialog System - No Canvas Needed (UI Toolkit Tutorial)
-* https://www.youtube.com/watch?v=JnlQd04rVok
+* <strong>Unity Dialog System - No Canvas Needed (UI Toolkit Tutorial)</strong>
+    * https://www.youtube.com/watch?v=JnlQd04rVok
 
 ### <span style="color:#A469A4"> BPWandering </span>
 * A quick tutorial on NPC Wandering mechanics using Behavior Designer / Behavior Designer PRO.
 * >  NOTE: if you use Behavior Designer, and not the old version, please read the 'Behavior Designer Pro Upgrade Guide' above.
-* Bring Your NPCs to Life! (Unity NPC Wandering Tutorial / BD PRO)
-* https://youtu.be/KPVc3FcM8FA?si=09F-mhnTgypCPoh9
+* <strong>Bring Your NPCs to Life! (Unity NPC Wandering Tutorial / BD PRO)</strong>
+    * https://youtu.be/KPVc3FcM8FA?si=09F-mhnTgypCPoh9
 
-### <span style="color:#A469A4"> BPReceiveDamage </span>
-* How will the NPC recognize me?
+### <span style="color:#A469A4"> BPNPCChase </span>
+* A tutorial on Chasing, and leashing a target using BDPro
+* If you would like to follow the YT Tutorial Video from scratch, Delete the BPNPCChase Scene and scripts from your local copy first. The tutorial starts by making a copy from BPWandering, and moving from there.
+* <strong>🧠 NPC Chase System in Unity (BDPro Leashing Tutorial) 🎮</strong>
+    * https://youtu.be/SSNWUSYufgw
+
 
 
 # FAQ:

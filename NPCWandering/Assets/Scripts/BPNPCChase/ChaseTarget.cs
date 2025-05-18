@@ -12,14 +12,16 @@ namespace BPNPCChase
     {
         [Tooltip("The targetObject we are chasing.")]
         public SharedVariable<GameObject> targetObject;
+        //how far should we be from the player before stopping?
         public float stoppingDistance;
+        //reference to OUR parent.
+        private GameObject _parentRef;
+
         [Tooltip("How far should we be before the leash breaks?")]
         public SharedVariable<float> leashDistance = 12;
 
         [Tooltip("Should we reset the Wander Values?")]
         public SharedVariable<bool> resetWander = false;
-
-        private GameObject _parentRef;
 
         public override void OnAwake()
         {
@@ -86,15 +88,10 @@ namespace BPNPCChase
             Vector3 direction = difference.normalized;
             float currentDistance = difference.magnitude;
 
-            //are we still Far enough from the target??
-            if (currentDistance > stopDistance)
-            {
-                float moveDistance = currentDistance - stopDistance;
-                Vector3 targetPosition = parentPosition + direction * moveDistance;
-                return targetPosition;
-            }
-            //if we're still far, just return 'our' position.
-            return parentPosition;
+            //determine the actual Vector3 position we're going for.
+            float moveDistance = currentDistance - stopDistance;
+            Vector3 targetPosition = parentPosition + direction * moveDistance;
+            return targetPosition;
         }
     }
 }
